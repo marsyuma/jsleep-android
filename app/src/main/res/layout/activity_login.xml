@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.265" />
 
     <EditText
-        android:id="@+id/EmailBox"
+        android:id="@+id/UsernameBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
