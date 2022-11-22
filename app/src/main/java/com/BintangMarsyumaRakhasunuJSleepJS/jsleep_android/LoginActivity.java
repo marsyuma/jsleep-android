@@ -23,8 +23,9 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
-    EditText username,password;
+    EditText email,password;
     Context mContext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         mApiService = UtilsApi.getApiService();
         mContext = this;
         TextView register = findViewById(R.id.RegisterClick);
-        username = findViewById(R.id.UsernameBox);
+        email = findViewById(R.id.EmailBox);
         password = findViewById(R.id.PasswordBox);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +47,8 @@ public class LoginActivity extends AppCompatActivity {
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Account account = requestAccount();
+                Account account = requestLogin();
+
             }
         });
 
@@ -65,8 +67,31 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
-                System.out.println("2");
+                System.out.println("On Failure");
                 Toast.makeText(mContext, "no Account id = 0", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return null;
+    }
+
+    protected Account requestLogin(){
+        mApiService.login(email.getText().toString(),password.getText().toString()).enqueue(new Callback<Account>() {
+            @Override
+            public void onResponse(Call<Account> call, Response<Account> response) {
+                if(response.isSuccessful()){
+                    Account account;
+                    account = response.body();
+                    MainActivity.loggedAccount = account;
+                    System.out.println(account.toString());
+                    Intent move = new Intent(LoginActivity.this,MainActivity.class);
+                    startActivity(move);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Account> call, Throwable t) {
+                System.out.println("On Failure");
+                Toast.makeText(mContext, "Email atau Password salah", Toast.LENGTH_SHORT).show();
             }
         });
         return null;

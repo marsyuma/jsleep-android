@@ -19,11 +19,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.R.id;
+import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.model.Account;
 import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.model.Room;
 import com.google.gson.*;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static Account loggedAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem menu) {
         Intent aboutMeIntent = new Intent(MainActivity.this,AboutMeActivity.class);
         switch (menu.getItemId()){
-
             case R.id.AccountIcon:
                 Toast.makeText(this, "About me", Toast.LENGTH_SHORT).show();
                 startActivity(aboutMeIntent);

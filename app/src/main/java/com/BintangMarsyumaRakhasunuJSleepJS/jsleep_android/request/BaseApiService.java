@@ -13,6 +13,8 @@ public interface BaseApiService {
     @POST("account/login")
     Call<Account> login (@Query("email") String email,@Query("password") String password);
 
+    @POST("account/register")
+    Call<Account> register (@Query("name") String name, @Query("email") String email,@Query("password") String password);
     @GET("room/{id}")
     Call<Room> getRoom (@Path("id") int id);
 }

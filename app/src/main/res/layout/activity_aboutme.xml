@@ -40,6 +40,30 @@
         app:layout_constraintVertical_bias="0.105" />
 
     <TextView
+        android:id="@+id/NameFillText"
+        android:layout_width="331dp"
+        android:layout_height="33dp"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.174" />
+
+    <TextView
+        android:id="@+id/EmailFillText"
+        android:layout_width="331dp"
+        android:layout_height="34dp"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.327" />
+
+    <TextView
         android:id="@+id/EmailText"
         android:layout_width="69dp"
         android:layout_height="40dp"
@@ -53,7 +77,7 @@
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintVertical_bias="0.254" />
 
     <TextView
         android:id="@+id/BalanceText"
@@ -69,49 +93,20 @@
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283" />
+        app:layout_constraintVertical_bias="0.397" />
 
     <TextView
-        android:id="@+id/NameFill"
-        android:layout_width="68dp"
-        android:layout_height="37dp"
-        android:text="Bintang"
+        android:id="@+id/BalanceFillText"
+        android:layout_width="327dp"
+        android:layout_height="36dp"
         android:textSize="20dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.629"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
-
-    <TextView
-        android:id="@+id/BalanceFill"
-        android:layout_width="68dp"
-        android:layout_height="37dp"
-        android:text="Rp 0.0"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.629"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
-
-    <TextView
-        android:id="@+id/EmailFill"
-        android:layout_width="180dp"
-        android:layout_height="32dp"
-        android:text="Bintang@gmail.com"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.939"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193" />
+        app:layout_constraintVertical_bias="0.466" />
 
     <EditText
         android:id="@+id/AmountBox"
@@ -125,19 +120,20 @@
         app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <Button
         android:id="@+id/TopUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Top Up"
         android:backgroundTint="#40DFFF"
+        android:text="Top Up"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.671"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395" />
+        app:layout_constraintVertical_bias="0.566" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
