@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5ffd6"
+    tools:context=".CreateRoomActivity">
+
+    <TextView
+        android:id="@+id/CreateRoomText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#acdda3"
+        android:fontFamily="cursive"
+        android:text="Create Room"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="370dp"
+        android:layout_height="510dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#cdeac7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CreateRoomText"
+        app:layout_constraintVertical_bias="0.1">
+
+        <LinearLayout
+            android:layout_width="365dp"
+            android:layout_height="500dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="325dp"
+                android:layout_height="208dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="7dp"
+                    android:text="" />
+
+                <EditText
+                    android:id="@+id/RoomNameFill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Name"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/RoomPriceFill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Price"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/RoomAddressFill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Address"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/RoomSizeFill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Size"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="365dp"
+                android:layout_height="182dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="365dp"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxBathub"
+                        android:layout_width="117dp"
+                        android:layout_height="wrap_content"
+                        android:text="Bathub" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxBalcony"
+                        android:layout_width="121dp"
+                        android:layout_height="wrap_content"
+                        android:text="Balcony" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxRestaurant"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Restaurant" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="365dp"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxAC"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:text="AC" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxRefrigerator"
+                        android:layout_width="121dp"
+                        android:layout_height="wrap_content"
+                        android:text="Refrigerator" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxWifi"
+                        android:layout_width="109dp"
+                        android:layout_height="wrap_content"
+                        android:text="Wifi" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxSwimmingPool"
+                        android:layout_width="193dp"
+                        android:layout_height="wrap_content"
+                        android:text="Swimming Pool" />
+
+                    <CheckBox
+                        android:id="@+id/checkBoxFitnessCenter"
+                        android:layout_width="173dp"
+                        android:layout_height="wrap_content"
+                        android:text="Fitness Center" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="316dp"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/CityTextCreateRoom"
+                    android:layout_width="165dp"
+                    android:layout_height="40dp"
+                    android:gravity="left"
+                    android:text="City"
+                    android:textSize="26dp" />
+
+                <Spinner
+                    android:id="@+id/spinnerCity"
+                    android:layout_width="198dp"
+                    android:layout_height="30dp"
+                    android:gravity="right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="316dp"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/BedTypeTextCreateRoom"
+                    android:layout_width="165dp"
+                    android:layout_height="40dp"
+                    android:gravity="left"
+                    android:text="Bed Type"
+                    android:textSize="26dp" />
+
+                <Spinner
+                    android:id="@+id/spinnerBed"
+                    android:layout_width="198dp"
+                    android:layout_height="30dp"
+                    android:gravity="right" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="331dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.2">
+
+        <Button
+            android:id="@+id/CreateRoomConfirmation"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#FF98ED89"
+            android:insetRight="0dp"
+            android:text="Create"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/CreateRoomCancel"
+            android:layout_width="177dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#FF98ED89"
+            android:insetLeft="26dp"
+            android:insetRight="1dp"
+            android:text="Cancel"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

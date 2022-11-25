@@ -4,136 +4,309 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f5ffd6"
+    android:background="#eef8ec"
     tools:context=".AboutMeActivity">
 
-    <TextView
-        android:id="@+id/NameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#fffbab"
-        android:fontFamily="serif-monospace"
-        android:text="Account Details"
-        android:textSize="30dp"
-        android:textStyle="italic"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/AccouuntDetailCard"
+        android:layout_width="325dp"
+        android:layout_height="355dp"
+        android:backgroundTint="#cdeac7"
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.08">
 
-    <TextView
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="69dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+        <LinearLayout
+            android:layout_width="325dp"
+            android:layout_height="300dp"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/NameFillText"
-        android:layout_width="331dp"
-        android:layout_height="33dp"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174" />
+            <TextView
+                android:id="@+id/AccountDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#acdda3"
+                android:fontFamily="cursive"
+                android:text="Account Details"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/EmailFillText"
-        android:layout_width="331dp"
-        android:layout_height="34dp"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
+            <TextView
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="67dp"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name"
+                android:textSize="20dp"
+                android:textStyle="italic" />
 
-    <TextView
-        android:id="@+id/EmailText"
-        android:layout_width="69dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="email"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254" />
+            <TextView
+                android:id="@+id/NameFillText"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:textSize="20dp"
+                android:textStyle="italic" />
 
-    <TextView
-        android:id="@+id/BalanceText"
-        android:layout_width="69dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Balance"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+            <TextView
+                android:id="@+id/EmailText"
+                android:layout_width="67dp"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:text="email"
+                android:textSize="20dp"
+                android:textStyle="italic" />
 
-    <TextView
-        android:id="@+id/BalanceFillText"
-        android:layout_width="327dp"
-        android:layout_height="36dp"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.466" />
+            <TextView
+                android:id="@+id/EmailFillText"
+                android:layout_width="331dp"
+                android:layout_height="34dp"
+                android:textSize="20dp"
+                android:textStyle="italic" />
 
-    <EditText
-        android:id="@+id/AmountBox"
-        android:layout_width="152dp"
-        android:layout_height="43dp"
-        android:ems="10"
-        android:inputType="number"
-        android:text="Amount"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+            <TextView
+                android:id="@+id/BalanceText"
+                android:layout_width="69dp"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Balance"
+                android:textSize="20dp"
+                android:textStyle="italic" />
 
-    <Button
-        android:id="@+id/TopUpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#40DFFF"
-        android:text="Top Up"
-        android:textColor="@color/black"
+            <TextView
+                android:id="@+id/BalanceFillText"
+                android:layout_width="327dp"
+                android:layout_height="36dp"
+                android:textSize="20dp"
+                android:textStyle="italic" />
+
+            <LinearLayout
+                android:layout_width="331dp"
+                android:layout_height="58dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/AmountBox"
+                    android:layout_width="152dp"
+                    android:layout_height="48dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="Amount" />
+
+                <Button
+                    android:id="@+id/topUpButton2"
+                    android:layout_width="171dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#98ED89"
+                    android:insetLeft="21dp"
+                    android:text="Top Up"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/RegisterButtonCard"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#cdeac7"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.671"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.566" />
+        app:layout_constraintVertical_bias="0.59">
+
+        <Button
+            android:id="@+id/RegisterRenterButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="#98ED89"
+            android:insetLeft="0dp"
+            android:text="Register Renter"
+            android:textColor="@color/black" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/RenterRegistrationCard"
+        android:layout_width="325dp"
+        android:layout_height="260dp"
+        android:backgroundTint="#cdeac7"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.865">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="325dp"
+            android:layout_height="228dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/RenterRegistrationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#acdda3"
+                android:fontFamily="cursive"
+                android:text="Renter Registration"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/RenterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/RenterAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Address"
+                android:inputType="text"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/RenterPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:inputType="number"
+                android:minHeight="48dp" />
+
+            <LinearLayout
+                android:layout_width="331dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/RegisterRenterConfirmation"
+                    android:layout_width="150dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="#FF98ED89"
+                    android:insetRight="0dp"
+                    android:text="Register"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/RegisterRenterCancel"
+                    android:layout_width="177dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="#FF98ED89"
+                    android:insetLeft="26dp"
+                    android:insetRight="1dp"
+                    android:text="Cancel"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/RegisterDetailCard"
+        android:layout_width="325dp"
+        android:layout_height="280dp"
+        android:backgroundTint="#cdeac7"
+        android:visibility="visible"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AccouuntDetailCard"
+        app:layout_constraintVertical_bias="0.2">
+
+        <LinearLayout
+            android:layout_width="325dp"
+            android:layout_height="240dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/RenterDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#acdda3"
+                android:fontFamily="cursive"
+                android:text="Renter Details"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/RenterNameText"
+                android:layout_width="67dp"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name"
+                android:textSize="20dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/RenterNameFillText"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:textSize="20dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/AddressText"
+                android:layout_width="124dp"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Address"
+                android:textSize="20dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/AddressFillText"
+                android:layout_width="331dp"
+                android:layout_height="34dp"
+                android:textSize="20dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/PhoneNumberText"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Phone Number"
+                android:textSize="20dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/PhoneNumberFillText"
+                android:layout_width="327dp"
+                android:layout_height="36dp"
+                android:textSize="20dp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

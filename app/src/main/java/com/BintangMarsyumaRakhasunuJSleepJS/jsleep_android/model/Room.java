@@ -11,7 +11,7 @@ public class Room extends Serializable
     public int accountId;
     public String name;
     public String address;
-    public Facility facility;
+    public ArrayList<Facility> facility;
     public BedType bedType;
     public City city;
     public Price price;

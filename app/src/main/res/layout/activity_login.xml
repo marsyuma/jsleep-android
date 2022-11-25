@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:text="JSLEEP"
-        android:textColor="#9c3dcc"
+        android:textColor="@color/deepBlue"
         android:textSize="36sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register Now!"
-        android:textColor="#9c3dcc"
+        android:textColor="@color/deepBlue"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
