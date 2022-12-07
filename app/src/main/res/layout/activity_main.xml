@@ -42,8 +42,8 @@
             android:layout_width="70dp"
             android:layout_height="50dp"
             android:ems="10"
-            android:inputType="number"
             android:text="1"
+            android:inputType="number"
             android:textAlignment="center" />
 
         <Button
@@ -67,5 +67,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.212" />
+
+    <ImageView
+        android:id="@+id/SunMain"
+        android:layout_width="411dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="504dp"
+        android:alpha="0.4"
+
+        android:rotation="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:srcCompat="@drawable/sun" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,4 +31,8 @@ public interface BaseApiService {
     Call<List<Room>> getAllRoom(@Query("page") int page, @Query("pageSize") int pageSize);
     @POST("room/create")
     Call<Room> room(@Query("accountId") int accountId, @Query("name") String name, @Query("size") int size, @Query("price") int price, @Query("facility") ArrayList<Facility> facility, @Query("city") City city, @Query("address") String address, @Query("bedType") BedType bedType);
+
+    @POST("account/{id}/topUp")
+    Call<Boolean> topUp(@Path("id") int id,
+                        @Query("balance") int balance);
 }

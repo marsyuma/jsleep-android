@@ -10,12 +10,13 @@
 
     <TextView
         android:id="@+id/JSLEEPText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
         android:text="JSLEEP"
-        android:textColor="@color/deepBlue"
-        android:textSize="36sp"
+        android:fontFamily="@font/bugaki"
+        android:textAlignment="center"
+        android:textColor="#658354"
+        android:textSize="64dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textVisiblePassword"
+        android:inputType="textPassword"
         android:minHeight="48dp"
         android:hint="Password"
         android:textAlignment="center"
@@ -86,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register Now!"
-        android:textColor="@color/deepBlue"
+        android:textColor="#4b6043"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,6 +95,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.685" />
+
+    <ImageView
+        android:id="@+id/Sun"
+        android:layout_width="350dp"
+        android:layout_height="286dp"
+        android:layout_marginBottom="536dp"
+        android:alpha="0.4"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sun" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

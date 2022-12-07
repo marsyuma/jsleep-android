@@ -33,9 +33,11 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         mApiService = UtilsApi.getApiService();
         mContext = this;
+
         TextView register = findViewById(R.id.RegisterClick);
         email = findViewById(R.id.EmailBox);
         password = findViewById(R.id.PasswordBox);
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

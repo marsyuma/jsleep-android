@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         System.out.println("test");
-        acc = getRoomList(1,100);
+        acc = getRoomList(0,10);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,37 +122,38 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    protected List<Room> getRoomList(int page, int pageSize) {
-        //System.out.println(pageSize);
-        mApiService.getAllRoom(page, pageSize).enqueue(new Callback<List<Room>>() {
+    protected List<Room> getRoomList(int page, int size) {
+        mApiService.getAllRoom(page, size).enqueue(new Callback<List<Room>>() {
             @Override
             public void onResponse(Call<List<Room>> call, Response<List<Room>> response) {
                 if (response.isSuccessful()) {
                     temp = response.body();
-                    nameStr = getName(temp);
-                    System.out.println("name extracted"+temp.toString());
-                    ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1,nameStr);
-                    list = (ListView) findViewById(id.ListName);
-                    list.setAdapter(itemAdapter);
-                    Toast.makeText(mContext, "getRoom success", Toast.LENGTH_SHORT).show();
+                    nameStr = new ArrayList<>();
+                    System.out.println(temp);
+                    for (Room room : temp) {
+                        nameStr.add(room.name);
+                    }
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, nameStr);
+                    list.setAdapter(adapter);
+                    Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(mContext, "Failed to get room list", Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
             public void onFailure(Call<List<Room>> call, Throwable t) {
-                t.printStackTrace();
-                Toast.makeText(mContext, "get room failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Failed to get room list", Toast.LENGTH_SHORT).show();
             }
-
         });
-        return null;
+        return temp;
     }
-    public static ArrayList<String> getName(List<Room> list) {
-        ArrayList<String> ret = new ArrayList<String>();
-        int i;
-        for (i = 0; i < list.size(); i++) {
-            ret.add(list.get(i).name);
+    protected List<String> getName(List<Room> roomList){
+        List<String> nameStr = new ArrayList<>();
+        for(Room room : roomList){
+            nameStr.add(room.name);
         }
-        return ret;
+        return nameStr;
     }
     public void onItemClick(AdapterView<?> l, View v, int position, long id) {
         Log.i("HelloListView", "You clicked Item: " + id + " at position:" + position);

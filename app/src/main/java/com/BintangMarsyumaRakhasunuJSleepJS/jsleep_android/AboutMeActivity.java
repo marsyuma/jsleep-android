@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.model.Account;
 import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.model.Renter;
 import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.request.BaseApiService;
 import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.request.UtilsApi;
@@ -34,6 +35,9 @@ public class AboutMeActivity extends AppCompatActivity {
     CardView RegisterDetailCard;
     TextView RenterNameFill, AddressFill, PhoneNumberFill;
 
+    Button TopUpButton;
+    TextView AmountBox;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class AboutMeActivity extends AppCompatActivity {
         if(balance == null){
             balance.setText("0");
         }
+
 
         name.setText(MainActivity.loggedAccount.name);
         email.setText(MainActivity.loggedAccount.email);
@@ -71,7 +76,8 @@ public class AboutMeActivity extends AppCompatActivity {
         RenterNameFill = findViewById(R.id.RenterNameFillText);
         AddressFill = findViewById(R.id.AddressFillText);
         PhoneNumberFill = findViewById(R.id.PhoneNumberFillText);
-
+        TopUpButton = findViewById(R.id.topUpButton);
+        AmountBox = findViewById(R.id.AmountBox);
         if(MainActivity.loggedAccount.renter == null){
             RegisterButtonCard.setVisibility(CardView.VISIBLE);
             RegisterDetailCard.setVisibility(CardView.GONE);
@@ -112,7 +118,22 @@ public class AboutMeActivity extends AppCompatActivity {
             PhoneNumberFill.setText(MainActivity.loggedAccount.renter.address);
             AddressFill.setText(MainActivity.loggedAccount.renter.phoneNumber);
         }
+
+        TopUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(AmountBox.getText().toString().equalsIgnoreCase("0") || AmountBox.getText().toString().equalsIgnoreCase("" )){
+                    System.out.println("Top Up Failed: Enter Required Top Up Amount!!") ;
+                    Toast.makeText(mContext, "Top Up Failed: Enter Required Top Up Amount!!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Boolean topUp = requestTopUp(MainActivity.loggedAccount.id,Integer.parseInt(AmountBox.getText().toString()));
+                }
+            }
+        });
+
     }
+
 
     protected Renter requestRenter(int id, String username, String address, String phone ){
         mApiService.registerRenter(id, username, address, phone).enqueue(new Callback<Renter>() {
@@ -136,4 +157,31 @@ public class AboutMeActivity extends AppCompatActivity {
         });
         return null;
     }
+
+    protected Boolean requestTopUp(int id, int balance ){
+        System.out.println("Id: " + id);
+        System.out.println("TopUp: " + balance);
+        mApiService.topUp(id,balance).enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if(response.isSuccessful()){
+                    Boolean topUpResult = response.body();
+                    System.out.println("TOPUP SUCCESSFUL!!") ;
+                    MainActivity.loggedAccount.balance += balance;
+                    Toast.makeText(mContext, "Top Up Successful", Toast.LENGTH_SHORT).show();
+                    Intent move = new Intent(AboutMeActivity.this, AboutMeActivity.class);
+                    startActivity(move);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                System.out.println("TOPUP ERROR!!");
+                System.out.println(t.toString());
+                Toast.makeText(mContext,"Top Up Failed",Toast.LENGTH_SHORT).show();
+            }
+        });
+        return null;
+    }
+
 }
