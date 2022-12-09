@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     ListView list;
     int currentPage;
     public static Account loggedAccount;
+    static List<String> roomName = new ArrayList<>();
+    static BaseApiService mApiServiceStatic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
     protected List<Room> getRoomList(int page, int size) {
         mApiService.getAllRoom(page, size).enqueue(new Callback<List<Room>>() {
             @Override

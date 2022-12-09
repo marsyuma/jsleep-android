@@ -229,7 +229,7 @@
         android:layout_width="325dp"
         android:layout_height="280dp"
         android:backgroundTint="#cdeac7"
-        android:visibility="visible"
+        android:visibility="gone"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -306,6 +306,20 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/SunAbout"
+        android:layout_width="411dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="144dp"
+
+        android:alpha="0.4"
+        android:rotation="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AccouuntDetailCard"
+        app:srcCompat="@drawable/sun" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

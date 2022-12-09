@@ -145,8 +145,7 @@ public class AboutMeActivity extends AppCompatActivity {
                     MainActivity.loggedAccount.renter = renter;
                     System.out.println("Renter berhasil didaftarkan");
                     Toast.makeText(mContext, "Berhasil register renter", Toast.LENGTH_SHORT).show();
-                    Intent move = new Intent(AboutMeActivity.this,AboutMeActivity.class);
-                    startActivity(move);
+                    recreate();
                 }
             }
 
@@ -169,8 +168,8 @@ public class AboutMeActivity extends AppCompatActivity {
                     System.out.println("TOPUP SUCCESSFUL!!") ;
                     MainActivity.loggedAccount.balance += balance;
                     Toast.makeText(mContext, "Top Up Successful", Toast.LENGTH_SHORT).show();
-                    Intent move = new Intent(AboutMeActivity.this, AboutMeActivity.class);
-                    startActivity(move);
+                    Intent intent = new Intent(AboutMeActivity.this, AboutMeActivity.class);
+                    startActivity(intent);
                 }
             }
 

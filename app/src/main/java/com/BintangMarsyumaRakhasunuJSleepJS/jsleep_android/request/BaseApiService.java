@@ -35,4 +35,27 @@ public interface BaseApiService {
     @POST("account/{id}/topUp")
     Call<Boolean> topUp(@Path("id") int id,
                         @Query("balance") int balance);
+
+    @POST("payment/create")
+    Call<Payment> createPayment(@Query("buyerId") int buyerId,
+                                @Query("renterId") int renterId,
+                                @Query("roomId") int roomId,
+                                @Query("from") String from,
+                                @Query("to") String to);
+
+    @GET("room/{id}")
+    Call<Room> room (@Path("id") int id);
+
+    @GET("payment/getAll/{id}")
+    Call<List<Payment>> getRoomByRenter(@Path("id") int renterId,@Query("page") int page, @Query("pageSize") int pageSize);
+
+    @POST("payment/{id}/accept")
+    Call<Boolean> acceptPayment(@Path("id") int id);
+
+    @POST("payment/{id}/cancel")
+    Call<Boolean> cancelPayment(@Path("id") int id);
+
+    @POST("payment/{id}/rating")
+    Call<Boolean> rating(@Path("id") int id, @Query("rating") String rating);
 }
+

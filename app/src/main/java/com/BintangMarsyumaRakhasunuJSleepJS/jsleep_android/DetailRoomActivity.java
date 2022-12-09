@@ -3,16 +3,19 @@ package com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.*;
 
 import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.model.*;
 
 public class DetailRoomActivity extends AppCompatActivity {
 
-    TextView roomName, roomPrice, roomSize, roomAddress, roomBedtype;
+    TextView roomName, roomPrice, roomSize, roomAddress, roomBedtype, city;
     CheckBox ac, refrig, wifi, bathub, balcony, restaurant, pool, fitness;
 
+    Button booking;
     public static Room tempRoom;
 
     @SuppressLint("MissingInflatedId")
@@ -26,6 +29,9 @@ public class DetailRoomActivity extends AppCompatActivity {
         roomSize = findViewById(R.id.SizeFillText);
         roomAddress = findViewById(R.id.RoomAddressFillText);
         roomBedtype = findViewById(R.id.BedTypeFillText);
+        city = findViewById(R.id.CityFillText);
+
+        booking = findViewById(R.id.BookButton);
 
         ac = findViewById(R.id.checkboxDetailac);
         refrig = findViewById(R.id.checkboxDetailrefrigerator);
@@ -41,6 +47,15 @@ public class DetailRoomActivity extends AppCompatActivity {
         roomSize.setText(String.valueOf(tempRoom.size));
         roomAddress.setText(tempRoom.address);
         roomBedtype.setText(tempRoom.bedType.toString());
+        city.setText(tempRoom.city.toString());
+
+        booking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailRoomActivity.this, CreatePaymentActivity.class);
+                startActivity(intent);
+            }
+        });
 
         for (int i = 0; i < tempRoom.facility.size(); i++) {
             if (tempRoom.facility.get(i).equals(Facility.AC )) {

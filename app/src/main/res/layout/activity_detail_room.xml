@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/DetailRoomCard"
         android:layout_width="325dp"
-        android:layout_height="600dp"
+        android:layout_height="700dp"
         android:backgroundTint="#cdeac7"
         android:visibility="visible"
         app:cardCornerRadius="10dp"
@@ -23,7 +23,7 @@
 
         <LinearLayout
             android:layout_width="325dp"
-            android:layout_height="580dp"
+            android:layout_height="663dp"
             android:orientation="vertical">
 
             <TextView
@@ -56,7 +56,7 @@
 
             <TextView
                 android:id="@+id/BedTypeText"
-                android:layout_width="67dp"
+                android:layout_width="99dp"
                 android:layout_height="36dp"
                 android:ems="10"
                 android:inputType="textEmailAddress"
@@ -121,16 +121,32 @@
                 android:layout_height="36dp"
                 android:textSize="20dp"
                 android:textStyle="italic" />
+            <TextView
+                android:id="@+id/CityText"
+                android:layout_width="69dp"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="City"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/CityFillText"
+                android:layout_width="327dp"
+                android:layout_height="36dp"
+                android:textSize="20dp"
+                android:textStyle="italic" />
 
             <LinearLayout
                 android:layout_width="325dp"
-                android:layout_height="80dp"
+                android:layout_height="53dp"
                 android:gravity="left"
                 android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/checkboxDetailac"
-                    android:layout_width="wrap_content"
+                    android:layout_width="85dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
@@ -139,7 +155,7 @@
 
                 <CheckBox
                     android:id="@+id/checkboxDetailrefrigerator"
-                    android:layout_width="wrap_content"
+                    android:layout_width="131dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
@@ -148,7 +164,7 @@
 
                 <CheckBox
                     android:id="@+id/checkboxDetailwifi"
-                    android:layout_width="wrap_content"
+                    android:layout_width="99dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
@@ -160,7 +176,7 @@
 
             <LinearLayout
                 android:layout_width="325dp"
-                android:layout_height="112dp"
+                android:layout_height="wrap_content"
                 android:gravity="left"
                 android:orientation="horizontal">
 
@@ -175,7 +191,7 @@
 
                 <CheckBox
                     android:id="@+id/checkboxDetailbalcony"
-                    android:layout_width="wrap_content"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
@@ -193,9 +209,10 @@
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="325dp"
-                android:layout_height="112dp"
+                android:layout_height="wrap_content"
                 android:gravity="left"
                 android:orientation="horizontal">
 
@@ -205,7 +222,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
-                    android:text="Bathtub"
+                    android:text="Swimming Pool"
                     android:textSize="15dp" />
 
                 <CheckBox
@@ -214,16 +231,28 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
-                    android:text="Balcony"
+                    android:text="Fitness Center"
                     android:textSize="15dp" />
 
-
-
-
             </LinearLayout>
+
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/BookButton"
+        android:layout_width="171dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:backgroundTint="#98ED89"
+        android:text="Book"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

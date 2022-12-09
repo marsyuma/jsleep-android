@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5ffd6"
+    tools:context=".CreatePaymentActivity">
+
+    <ImageView
+        android:id="@+id/SunPay2"
+        android:layout_width="411dp"
+        android:layout_height="259dp"
+
+        android:layout_marginBottom="552dp"
+        android:alpha="0.4"
+        android:rotation="180"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sun" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardViewBook"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#cdeac7"
+        android:visibility="visible"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegisterDetailCard"
+        app:layout_constraintVertical_bias="0.1">>
+
+        <Button
+            android:id="@+id/CreatePaymentButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#98ED89"
+            android:insetLeft="5dp"
+            android:insetRight="5dp"
+            android:text="Book"
+            android:textColor="@color/black" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardViewConfirmCancel"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#cdeac7"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegisterDetailCard"
+        app:layout_constraintVertical_bias="0.1">
+
+        <LinearLayout
+            android:layout_width="325dp"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ConfirmPaymentButton"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="#98ED89"
+                android:insetLeft="5dp"
+                android:insetRight="5dp"
+                android:text="Confirm"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/CancelPaymentButton"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="#98ED89"
+                android:insetLeft="5dp"
+                android:insetRight="5dp"
+                android:text="Cancel"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/SunPay1"
+        android:layout_width="411dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="520dp"
+        android:visibility="gone"
+        android:alpha="0.4"
+        android:rotation="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sun" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/RegisterDetailCard"
+        android:layout_width="325dp"
+        android:layout_height="330dp"
+        android:backgroundTint="#cdeac7"
+        android:visibility="visible"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.411">
+
+        <LinearLayout
+            android:layout_width="325dp"
+            android:layout_height="320dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/PaymentCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#acdda3"
+                android:fontFamily="cursive"
+                android:text="Create a Payment"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/PaymentInfo"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Booking Information"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+
+            <TextView
+                android:id="@+id/FromText"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="From:"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/FromFillText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="yyyy-mm-dd"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/ToText"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="To:"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/ToFillText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="yyyy-mm-dd"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/RoomNamePayment"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Room Name:"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/RoomNamePaymentFill"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView><![CDATA[
+
+    />
+]]>
+</androidx.constraintlayout.widget.ConstraintLayout>
