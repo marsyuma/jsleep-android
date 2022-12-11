@@ -31,7 +31,10 @@ import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.request.UtilsApi;
 import com.google.gson.*;
 
 import retrofit2.*;
-
+/**
+ This is the activity class for main menu.
+ @author Bintang MR
+ */
 public class MainActivity extends AppCompatActivity {
 
     BaseApiService mApiService;
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         mApiService = UtilsApi.getApiService();
         mContext = this;

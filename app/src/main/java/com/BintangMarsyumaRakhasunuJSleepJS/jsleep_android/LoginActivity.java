@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,16 +21,29 @@ import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.request.UtilsApi;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/**
+ This is the activity class for the login screen.
+ @author Bintang MR
+ */
 public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText email,password;
     Context mContext;
 
+    ImageView exit;
 
+/**
+ * Method to initialize the activity.
+ * @param savedInstanceState
+ */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
         setContentView(R.layout.activity_login);
         mApiService = UtilsApi.getApiService();
         mContext = this;
@@ -37,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
         TextView register = findViewById(R.id.RegisterClick);
         email = findViewById(R.id.EmailBox);
         password = findViewById(R.id.PasswordBox);
+
+        exit = findViewById(R.id.exit);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +67,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Account account = requestLogin();
 
+            }
+        });
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finishAffinity();
+                System.exit(0);
             }
         });
 
@@ -76,6 +99,10 @@ public class LoginActivity extends AppCompatActivity {
         return null;
     }
 
+    /**
+     * Method to send a request to the backend to login.
+     * @return
+     */
     protected Account requestLogin(){
         mApiService.login(email.getText().toString(),password.getText().toString()).enqueue(new Callback<Account>() {
             @Override

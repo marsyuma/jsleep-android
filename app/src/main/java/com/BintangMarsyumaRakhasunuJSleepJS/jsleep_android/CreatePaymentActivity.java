@@ -28,7 +28,10 @@ import java.util.regex.Pattern;
 
 import retrofit2.*;
 import retrofit2.http.Query;
-
+/**
+ This is the activity class for creating payment and booking.
+ @author Bintang MR
+ */
 public class CreatePaymentActivity extends AppCompatActivity {
     BaseApiService mApiService;
     Context mContext;
@@ -37,8 +40,7 @@ public class CreatePaymentActivity extends AppCompatActivity {
 
     TextView roomName;
 
-    CardView CardViewBook;
-    Button BookingButton;
+    Button BookingButton, CancelButton;
 
     EditText BookingFrom, BookingTo;
 
@@ -57,9 +59,9 @@ public class CreatePaymentActivity extends AppCompatActivity {
         roomName = findViewById(R.id.RoomNamePaymentFill);
         roomName.setText(DetailRoomActivity.tempRoom.name);
         BookingButton = findViewById(R.id.CreatePaymentButton);
+        CancelButton = findViewById(R.id.cancelButton);
 
         //==============Booking Biasa================
-        CardViewBook = findViewById(R.id.CardViewBook);
         BookingFrom = findViewById(R.id.FromFillText);
         BookingTo = findViewById(R.id.ToFillText);
 
@@ -101,6 +103,12 @@ public class CreatePaymentActivity extends AppCompatActivity {
                         BookingFrom.getText().toString(),
                         BookingTo.getText().toString());
 
+            }
+        });
+        CancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 

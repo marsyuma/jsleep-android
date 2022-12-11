@@ -23,30 +23,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/sun" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/CardViewBook"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="325dp"
         android:layout_height="50dp"
-        android:backgroundTint="#cdeac7"
-        android:visibility="visible"
-        app:cardCornerRadius="10dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PaymentConfirmText"
-        app:layout_constraintVertical_bias="0.1">
+        app:layout_constraintVertical_bias="0.255">
 
         <Button
             android:id="@+id/CreatePaymentButton"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:backgroundTint="#98ED89"
+            android:background="@drawable/button_rounded"
             android:insetLeft="5dp"
             android:insetRight="5dp"
             android:text="Book"
             android:textColor="@color/black" />
-    </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_rounded"
+            android:text="Cancel"
+            android:textColor="@color/black" />
+    </LinearLayout>
 
 
 
@@ -174,10 +184,12 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="600dp"
         android:layout_height="630dp"
-        android:alpha="0.3"
+        android:alpha="0.2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

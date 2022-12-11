@@ -153,13 +153,6 @@ public class RenterConfirmationActivity extends AppCompatActivity {
                     startActivity(startIntent);
                 }
             });
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent move = new Intent(RenterConfirmationActivity.this, BookingListActivity.class);
-                    startActivity(move);
-                }
-            });
         }
 
 
@@ -181,7 +174,13 @@ public class RenterConfirmationActivity extends AppCompatActivity {
             }
         });
 
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(RenterConfirmationActivity.this, BookingListActivity.class);
+                startActivity(move);
+            }
+        });
     }
 
     protected static  Room loadRoom(int id){

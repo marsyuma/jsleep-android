@@ -12,7 +12,13 @@ import android.view.View;
 import android.widget.*;
 
 import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.model.*;
-
+/**
+ * DetailRoomActivity is an activity that displays detailed information about a room,
+ * such as its name, price, size, address, bed type, and facilities.
+ * The user can also place an order for the room from this activity.
+ *
+ * @author Bintang MR
+ */
 public class DetailRoomActivity extends AppCompatActivity {
 
     TextView roomName, roomPrice, roomSize, roomAddress, roomBedtype, city;

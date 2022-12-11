@@ -151,7 +151,7 @@
                 <TextView
                     android:id="@+id/RoomAddressFillText"
                     android:layout_width="327dp"
-                    android:layout_height="36dp"
+                    android:layout_height="76dp"
                     android:fontFamily="@font/satoshiblack"
                     android:textSize="20dp"
                     android:textStyle="italic" />

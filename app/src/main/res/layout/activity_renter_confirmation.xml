@@ -57,12 +57,13 @@
 
                     <TextView
                         android:id="@+id/renter"
-                        android:layout_width="240dp"
-                        android:layout_height="61dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
-                        android:fontFamily="@font/satoshiblack"
-                        android:gravity="center_vertical"
+                        android:background="@drawable/rounded_corner_title"
+                        android:fontFamily="cursive"
+                        android:textAlignment="center"
                         android:text="Room Details"
                         android:textColor="@color/black"
                         android:textSize="30dp"
@@ -574,7 +575,7 @@
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="10dp"
+                android:layout_margin="0dp"
                 android:visibility="gone"
                 app:cardBackgroundColor="@color/backgroundGreen"
                 app:cardCornerRadius="20dp"
@@ -609,7 +610,7 @@
                         android:layout_width="200dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
-                        android:layout_marginTop="30dp" />
+                        android:layout_marginTop="20dp" />
 
                     <Button
                         android:id="@+id/rateButton"
@@ -617,7 +618,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center"
 
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/button_rounded"
                         android:fontFamily="@font/satoshiblack"
                         android:text="Rate"
@@ -637,11 +638,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="0dp"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                android:visibility="visible">
 
 
                 <Button
@@ -674,6 +675,7 @@
                 android:id="@+id/backButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:background="@drawable/button_rounded"

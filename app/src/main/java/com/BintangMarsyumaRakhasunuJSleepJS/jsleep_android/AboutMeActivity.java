@@ -18,7 +18,11 @@ import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.request.BaseApiServic
 import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.request.UtilsApi;
 
 import retrofit2.*;
-
+/**
+ * @author Bintang MR
+ * @version 1.0
+ *
+ */
 public class AboutMeActivity extends AppCompatActivity {
     Context mContext;
     BaseApiService mApiService;
@@ -41,6 +45,10 @@ public class AboutMeActivity extends AppCompatActivity {
     Button back;
 
     Button PaymentButton;
+    /**
+     This method is called when the AboutMe activity is created. It sets up the views and sets the visibility of the different view groups based on the savedAccount field.
+     @param savedInstanceState The saved instance state
+     */
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,7 +163,15 @@ public class AboutMeActivity extends AppCompatActivity {
         });
     }
 
-
+    /**
+     This method sends a request to register a renter with the given ID, username, address, and phone number. It updates the savedAccount field if the request is successful.
+     @param id The ID of the renter
+     @param username The username of the renter
+     @param address The address of the renter
+     @param phone The phone number of the renter
+     @return null
+     @throws NullPointerException
+     */
     protected Renter requestRenter(int id, String username, String address, String phone ){
         mApiService.registerRenter(id, username, address, phone).enqueue(new Callback<Renter>() {
             @Override
@@ -177,7 +193,12 @@ public class AboutMeActivity extends AppCompatActivity {
         });
         return null;
     }
-
+    /**
+     This method sends a request to top up the balance of the account with the given ID by the given amount. It updates the savedAccount field if the request is successful.
+     @param id The ID of the account
+     @param balance The amount to top up the balance by
+     @return null
+     */
     protected Boolean requestTopUp(int id, int balance ){
         System.out.println("Id: " + id);
         System.out.println("TopUp: " + balance);

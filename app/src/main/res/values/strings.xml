@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">jsleep-android</string>
+    <string name="app_name">JSleep</string>
     <string name="title_activity_paginate">paginate</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
