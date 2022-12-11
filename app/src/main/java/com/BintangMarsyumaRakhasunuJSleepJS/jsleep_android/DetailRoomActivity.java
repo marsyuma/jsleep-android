@@ -18,7 +18,7 @@ public class DetailRoomActivity extends AppCompatActivity {
     TextView roomName, roomPrice, roomSize, roomAddress, roomBedtype, city;
     CheckBox ac, refrig, wifi, bathub, balcony, restaurant, pool, fitness;
 
-    Button booking;
+    Button booking, cancel;
     public static Room tempRoom;
 
     @SuppressLint("MissingInflatedId")
@@ -33,7 +33,7 @@ public class DetailRoomActivity extends AppCompatActivity {
         roomAddress = findViewById(R.id.RoomAddressFillText);
         roomBedtype = findViewById(R.id.BedTypeFillText);
         city = findViewById(R.id.CityFillText);
-
+        cancel = findViewById(R.id.backButton);
         booking = findViewById(R.id.BookButton);
 
         ac = findViewById(R.id.checkboxDetailac);
@@ -79,7 +79,13 @@ public class DetailRoomActivity extends AppCompatActivity {
                 fitness.setChecked(true);
             }
         }
-
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailRoomActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

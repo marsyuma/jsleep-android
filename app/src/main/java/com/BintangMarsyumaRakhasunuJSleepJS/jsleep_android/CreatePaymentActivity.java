@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.*;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.model.Payment;
 import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.request.BaseApiService;
 import com.BintangMarsyumaRakhasunuJSleepJS.jsleep_android.request.UtilsApi;
 
+import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,6 +42,7 @@ public class CreatePaymentActivity extends AppCompatActivity {
 
     EditText BookingFrom, BookingTo;
 
+    DatePickerDialog datePickerDialogEnd,datePickerDialogStart;
 
     final String REGEX_DATE_PATTERN = "\\d{4}-\\d{2}-\\d{2}";
 
@@ -59,7 +63,35 @@ public class CreatePaymentActivity extends AppCompatActivity {
         BookingFrom = findViewById(R.id.FromFillText);
         BookingTo = findViewById(R.id.ToFillText);
 
+        final Calendar c = Calendar.getInstance();
+        int mYear = c.get(Calendar.YEAR);
+        int mMonth = c.get(Calendar.MONTH);
+        int mDay = c.get(Calendar.DAY_OF_MONTH);
+        datePickerDialogStart = new DatePickerDialog(CreatePaymentActivity.this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        BookingFrom.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                    }
+                }, mYear, mMonth, mDay);
 
+        datePickerDialogEnd = new DatePickerDialog(CreatePaymentActivity.this,
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        BookingTo.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                    }
+                }, mYear, mMonth, mDay);
+
+        BookingFrom.setOnClickListener(v -> {
+            datePickerDialogStart.show();
+        });
+        BookingTo.setOnClickListener(v -> {
+            datePickerDialogEnd.show();
+        });
         BookingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

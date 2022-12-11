@@ -43,7 +43,7 @@
 
         <LinearLayout
             android:layout_width="325dp"
-            android:layout_height="480dp"
+            android:layout_height="460dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -177,7 +177,7 @@
 
             <LinearLayout
                 android:layout_width="316dp"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -188,34 +188,34 @@
                     android:text="City"
                     android:textColor="#000000"
                     android:fontFamily="@font/satoshiblack"
-                    android:textSize="26dp" />
+                    android:textSize="18dp" />
 
                 <Spinner
                     android:id="@+id/spinnerCity"
                     android:layout_width="198dp"
-                    android:layout_height="30dp"
+                    android:layout_height="match_parent"
                     android:gravity="right" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="316dp"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/BedTypeTextCreateRoom"
                     android:layout_width="125dp"
-                    android:layout_height="40dp"
+                    android:layout_height="match_parent"
                     android:gravity="left"
                     android:fontFamily="@font/satoshiblack"
                     android:text="Bed Type"
                     android:textColor="#000000"
-                    android:textSize="26dp" />
+                    android:textSize="18dp" />
 
                 <Spinner
                     android:id="@+id/spinnerBed"
                     android:layout_width="198dp"
-                    android:layout_height="30dp"
+                    android:layout_height="match_parent"
                     android:gravity="right" />
             </LinearLayout>
         </LinearLayout>
@@ -223,37 +223,41 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="331dp"
+        android:layout_width="326dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.2">
+        app:layout_constraintVertical_bias="0.255">
 
         <Button
             android:id="@+id/CreateRoomConfirmation"
-            android:layout_width="150dp"
+            android:layout_width="143dp"
             android:layout_height="48dp"
-            android:backgroundTint="#FF98ED89"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_rounded"
             android:insetRight="0dp"
             android:text="Create"
             android:textColor="@color/black" />
 
         <Button
             android:id="@+id/CreateRoomCancel"
-            android:layout_width="177dp"
+            android:layout_width="143dp"
             android:layout_height="48dp"
-            android:backgroundTint="#FF98ED89"
-            android:insetLeft="26dp"
-            android:insetRight="1dp"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_rounded"
             android:text="Cancel"
             android:textColor="@color/black" />
     </LinearLayout>
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="600dp"
         android:layout_height="502dp"
 
         android:alpha="0.2"
@@ -263,7 +267,7 @@
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.5"
+        app:layout_constraintVertical_bias="1.7"
         app:srcCompat="@drawable/bottom_leaf" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

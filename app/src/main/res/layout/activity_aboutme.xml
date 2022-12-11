@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/AccouuntDetailCard"
         android:layout_width="325dp"
-        android:layout_height="250dp"
+        android:layout_height="270dp"
         android:backgroundTint="#cdeac7"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +64,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_marginBottom="10dp">
             <TextView
                 android:id="@+id/EmailText"
@@ -128,7 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#98ED89"
+                    android:background="@drawable/button_rounded"
                     android:fontFamily="@font/satoshiblack"
                     android:insetLeft="20dp"
                     android:insetRight="20dp"
@@ -146,7 +146,7 @@
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:backgroundTint="#cdeac7"
-        android:visibility="visible"
+        android:visibility="gone"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -159,7 +159,7 @@
             android:id="@+id/RegisterRenterButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:backgroundTint="#98ED89"
+            android:background="@drawable/button_rounded"
             android:fontFamily="@font/satoshiblack"
 
             android:insetLeft="0dp"
@@ -170,7 +170,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/RenterRegistrationCard"
         android:layout_width="325dp"
-        android:layout_height="260dp"
+        android:layout_height="250dp"
         android:backgroundTint="#cdeac7"
         android:visibility="gone"
         app:cardCornerRadius="10dp"
@@ -179,12 +179,12 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AccouuntDetailCard"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintVertical_bias="0.1">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="325dp"
-            android:layout_height="228dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
@@ -229,49 +229,53 @@
                 android:minHeight="48dp" />
 
             <LinearLayout
-                android:layout_width="331dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/RegisterRenterConfirmation"
                     android:layout_width="150dp"
                     android:layout_height="48dp"
-                    android:backgroundTint="#FF98ED89"
-                    android:insetRight="0dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/button_rounded"
                     android:text="Register"
                     android:textColor="@color/black" />
 
                 <Button
                     android:id="@+id/RegisterRenterCancel"
-                    android:layout_width="177dp"
-                    android:layout_height="48dp"
-                    android:backgroundTint="#FF98ED89"
-                    android:insetLeft="26dp"
-                    android:insetRight="1dp"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/button_rounded"
                     android:text="Cancel"
                     android:textColor="@color/black" />
             </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/RegisterDetailCard"
         android:layout_width="325dp"
-        android:layout_height="320dp"
+        android:layout_height="300dp"
         android:layout_marginTop="5dp"
         android:backgroundTint="#cdeac7"
-        android:visibility="gone"
+        android:visibility="visible"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AccouuntDetailCard"
-        app:layout_constraintVertical_bias="0.2">
+        app:layout_constraintVertical_bias="0.1">
 
         <LinearLayout
             android:layout_width="325dp"
-            android:layout_height="310dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
@@ -285,62 +289,83 @@
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/RenterNameText"
-                android:layout_width="67dp"
-                android:layout_height="36dp"
-                android:ems="10"
-                android:fontFamily="@font/satoshiblack"
-                android:inputType="textPersonName"
-                android:text="Name"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/RenterNameFillText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:fontFamily="@font/satoshiblack"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/AddressText"
-                android:layout_width="124dp"
-                android:layout_height="36dp"
-                android:ems="10"
-                android:fontFamily="@font/satoshiblack"
-                android:inputType="text"
-                android:text="Address:"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/RenterNameText"
+                    android:layout_width="146dp"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:fontFamily="@font/satoshiblack"
+                    android:inputType="textPersonName"
+                    android:text="Name:"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/AddressFillText"
-                android:layout_width="331dp"
-                android:layout_height="34dp"
-                android:fontFamily="@font/satoshiblack"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/RenterNameFillText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/satoshiblack"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/PhoneNumberText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:ems="10"
-                android:fontFamily="@font/satoshiblack"
-                android:inputType="textPersonName"
-                android:text="Phone Number:"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/PhoneNumberFillText"
-                android:layout_width="327dp"
-                android:layout_height="36dp"
-                android:fontFamily="@font/satoshiblack"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/AddressText"
+                    android:layout_width="124dp"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:fontFamily="@font/satoshiblack"
+                    android:inputType="text"
+                    android:text="Address:"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/AddressFillText"
+                    android:layout_width="331dp"
+                    android:layout_height="34dp"
+                    android:fontFamily="@font/satoshiblack"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/PhoneNumberText"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:fontFamily="@font/satoshiblack"
+                    android:inputType="textPersonName"
+                    android:text="Phone Number:"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/PhoneNumberFillText"
+                    android:layout_width="327dp"
+                    android:layout_height="36dp"
+                    android:fontFamily="@font/satoshiblack"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="325dp"
@@ -352,11 +377,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#98ED89"
+                    android:background="@drawable/button_rounded"
                     android:fontFamily="@font/satoshiblack"
                     android:insetLeft="10dp"
                     android:insetRight="10dp"
-                    android:text="Payment List"
+                    android:text="Booking List"
                     android:textColor="@color/black" />
             </LinearLayout>
 
@@ -367,7 +392,7 @@
         android:id="@+id/backButton"
         android:layout_width="325dp"
         android:layout_height="40dp"
-        android:backgroundTint="#98ED89"
+        android:background="@drawable/button_rounded"
         android:fontFamily="@font/satoshiblack"
         android:insetLeft="0dp"
         android:text="Back"

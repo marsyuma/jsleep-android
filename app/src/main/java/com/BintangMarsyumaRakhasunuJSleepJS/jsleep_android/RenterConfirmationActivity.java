@@ -44,6 +44,7 @@ public class RenterConfirmationActivity extends AppCompatActivity {
 
     BaseApiService mApiService;
     Context mContext;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
@@ -78,6 +79,7 @@ public class RenterConfirmationActivity extends AppCompatActivity {
         rate = findViewById(R.id.rateButton);
         rateText = findViewById(R.id.rateText);
         ratingView = findViewById(R.id.ratingView);
+        back = findViewById(R.id.backButton);
 
 
         if(!tempPayment.status.equals(Invoice.PaymentStatus.WAITING)){
@@ -151,7 +153,13 @@ public class RenterConfirmationActivity extends AppCompatActivity {
                     startActivity(startIntent);
                 }
             });
-
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent move = new Intent(RenterConfirmationActivity.this, BookingListActivity.class);
+                    startActivity(move);
+                }
+            });
         }
 
 

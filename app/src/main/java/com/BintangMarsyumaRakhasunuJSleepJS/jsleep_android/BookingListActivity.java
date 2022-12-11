@@ -39,13 +39,12 @@ public class BookingListActivity extends AppCompatActivity {
     List<Payment> temp ;
     List<Payment> acc ;
     ListView lv;
-    Button next, prev;
+    Button back, next, prev;
     public static Room tempRoom = null;
     int currentPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        currentPage= 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_list);
         mApiService= UtilsApi.getApiService();
@@ -55,25 +54,30 @@ public class BookingListActivity extends AppCompatActivity {
         lv = findViewById(R.id.listViewOrder);
         next = findViewById(id.NextPaymentButton);
         prev = findViewById(id.PrevPaymentButton);
+        back = findViewById(id.backButton);
         lv.setOnItemClickListener(this::onItemClick);
         System.out.println("gap sblm acc");
+        currentPage = 0;
         acc = getPaymentList(MainActivity.loggedAccount.id, 0, 10);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(currentPage > temp.size()){
-                    currentPage-=1;
-                }
-                currentPage++;
-                try {
-                    acc = getPaymentList(MainActivity.loggedAccount.id, currentPage-1, 10);  //return null
+                if (temp.size() > currentPage) {
+                    currentPage++;
+                    try {
+                        acc = getPaymentList(MainActivity.loggedAccount.id, currentPage-1, 10);  //return null
+                        Toast.makeText(mContext, "Page "+currentPage, Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
                     Toast.makeText(mContext, "Page "+currentPage, Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
             }
         });
+
+
 
         prev.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,10 +93,18 @@ public class BookingListActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
             }
         });
 
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, AboutMeActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

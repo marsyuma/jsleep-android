@@ -22,23 +22,32 @@ public class RegisterActivity extends AppCompatActivity {
     BaseApiService mApiService;
     EditText name, email,password;
     Context mContext;
+    Button cancel, register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        cancel = findViewById(R.id.backButton);
         mApiService = UtilsApi.getApiService();
         mContext = this;
         name = findViewById(R.id.NameFillBox);
         email = findViewById(R.id.EmailFillBox);
         password = findViewById(R.id.PasswordFillBox);
-        Button registerbutton = findViewById(R.id.RegisterButton);
-        registerbutton.setOnClickListener(new View.OnClickListener() {
+        register = findViewById(R.id.RegisterButton);
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Account account = requestRegister();
 
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent move = new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(move);
             }
         });
 

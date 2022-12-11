@@ -7,43 +7,42 @@
     tools:context=".RenterConfirmationActivity">
 
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="470dp"
+        android:layout_height="match_parent"
         android:fillViewport="false"
         android:orientation="vertical"
         android:padding="10dp"
+        app:layout_constraintVertical_bias="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="392dp"
-            android:layout_height="1300dp"
+            android:layout_height="800dp"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical"
 
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="21dp">
+            tools:layout_editor_absoluteY="0dp">
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvCreateRoom"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content"
+                android:layout_width="380dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="10dp"
-
                 app:cardBackgroundColor="@color/backgroundGreen"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="10dp"
-                app:cardMaxElevation="12dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="10dp"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.488"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0">
@@ -51,7 +50,7 @@
                 <LinearLayout
                     android:layout_width="325dp"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:orientation="vertical"
                     tools:layout_editor_absoluteX="33dp"
                     tools:layout_editor_absoluteY="120dp">
@@ -219,7 +218,6 @@
                         android:text="Address"
                         android:textColor="@color/black"
                         android:textSize="20dp" />
-
 
 
                     <TextView
@@ -447,7 +445,7 @@
                         android:layout_width="300dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -488,7 +486,7 @@
                         android:layout_width="300dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -571,42 +569,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:id="@+id/voucherInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <EditText
-                    android:id="@+id/voucherCode"
-                    android:layout_width="130dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/black"
-                    android:enabled="true"
-                    android:fontFamily="@font/satoshiblack"
-                    android:hint="Enter code"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black" />
-
-                <Button
-                    android:id="@+id/applyVoucher"
-                    android:layout_width="130dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/button_rounded"
-                    android:enabled="true"
-                    android:fontFamily="@font/satoshiblack"
-                    android:text="Check code"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvRating"
                 android:layout_width="400dp"
@@ -676,9 +638,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="0dp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
 
                 <Button
@@ -707,6 +670,15 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_rounded"
+                android:text="Back"
+                android:textColor="@color/black"></Button>
 
         </LinearLayout>
 
