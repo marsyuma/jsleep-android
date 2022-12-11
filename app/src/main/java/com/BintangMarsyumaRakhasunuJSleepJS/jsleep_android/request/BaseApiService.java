@@ -29,6 +29,7 @@ public interface BaseApiService {
 
     @GET("room/getAllRoom")
     Call<List<Room>> getAllRoom(@Query("page") int page, @Query("pageSize") int pageSize);
+
     @POST("room/create")
     Call<Room> room(@Query("accountId") int accountId, @Query("name") String name, @Query("size") int size, @Query("price") int price, @Query("facility") ArrayList<Facility> facility, @Query("city") City city, @Query("address") String address, @Query("bedType") BedType bedType);
 
@@ -57,5 +58,6 @@ public interface BaseApiService {
 
     @POST("payment/{id}/rating")
     Call<Boolean> rating(@Path("id") int id, @Query("rating") String rating);
+
 }
 

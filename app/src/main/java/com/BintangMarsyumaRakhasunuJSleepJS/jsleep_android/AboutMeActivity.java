@@ -38,6 +38,9 @@ public class AboutMeActivity extends AppCompatActivity {
     Button TopUpButton;
     TextView AmountBox;
 
+    Button back;
+
+    Button PaymentButton;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +81,11 @@ public class AboutMeActivity extends AppCompatActivity {
         PhoneNumberFill = findViewById(R.id.PhoneNumberFillText);
         TopUpButton = findViewById(R.id.topUpButton);
         AmountBox = findViewById(R.id.AmountBox);
+        PaymentButton = findViewById(R.id.PaymentList);
+
+        //==============Back========================
+        back = findViewById(R.id.backButton);
+
         if(MainActivity.loggedAccount.renter == null){
             RegisterButtonCard.setVisibility(CardView.VISIBLE);
             RegisterDetailCard.setVisibility(CardView.GONE);
@@ -117,6 +125,13 @@ public class AboutMeActivity extends AppCompatActivity {
             RenterNameFill.setText(MainActivity.loggedAccount.renter.username);
             PhoneNumberFill.setText(MainActivity.loggedAccount.renter.address);
             AddressFill.setText(MainActivity.loggedAccount.renter.phoneNumber);
+            PaymentButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(AboutMeActivity.this, BookingListActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
 
         TopUpButton.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +146,13 @@ public class AboutMeActivity extends AppCompatActivity {
                 }
             }
         });
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AboutMeActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -168,8 +189,10 @@ public class AboutMeActivity extends AppCompatActivity {
                     System.out.println("TOPUP SUCCESSFUL!!") ;
                     MainActivity.loggedAccount.balance += balance;
                     Toast.makeText(mContext, "Top Up Successful", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(AboutMeActivity.this, AboutMeActivity.class);
-                    startActivity(intent);
+                    Intent startIntent = getIntent();
+                    finish();
+                    startActivity(startIntent);
+
                 }
             }
 

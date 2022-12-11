@@ -7,239 +7,269 @@
     android:background="#f5ffd6"
     tools:context=".DetailRoomActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/DetailRoomCard"
+    <TextView
+        android:id="@+id/RoomDetailText"
         android:layout_width="325dp"
-        android:layout_height="700dp"
-        android:backgroundTint="#cdeac7"
-        android:visibility="visible"
-        app:cardCornerRadius="10dp"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/rounded_corner_title"
+        android:fontFamily="cursive"
+        android:text="Room Detail"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08">
+        app:layout_constraintVertical_bias="0.035" />
 
-        <LinearLayout
-            android:layout_width="325dp"
-            android:layout_height="663dp"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/RoomDetailText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#acdda3"
-                android:fontFamily="cursive"
-                android:text="Room Detail"
-                android:textAlignment="center"
-                android:textSize="30dp"
-                android:textStyle="bold" />
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="340dp"
+        android:layout_height="570dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RoomDetailText"
+        app:layout_constraintVertical_bias="0.1">
 
-            <TextView
-                android:id="@+id/DetailRoomName"
-                android:layout_width="67dp"
-                android:layout_height="36dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name"
-                android:textSize="20dp"
-                android:textStyle="bold|italic" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/DetailRoomCard"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:backgroundTint="#cdeac7"
+            app:cardBackgroundColor="@color/backgroundGreen"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:id="@+id/NameFillText"
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:textSize="20dp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/BedTypeText"
-                android:layout_width="99dp"
-                android:layout_height="36dp"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:text="Bed Type"
-                android:textSize="20dp"
-                android:textStyle="bold|italic" />
-
-            <TextView
-                android:id="@+id/BedTypeFillText"
-                android:layout_width="331dp"
-                android:layout_height="34dp"
-                android:textSize="20dp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/SizeText"
-                android:layout_width="69dp"
-                android:layout_height="36dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Size"
-                android:textSize="20dp"
-                android:textStyle="bold|italic" />
-
-            <TextView
-                android:id="@+id/SizeFillText"
-                android:layout_width="327dp"
-                android:layout_height="36dp"
-                android:textSize="20dp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/PriceText"
-                android:layout_width="69dp"
-                android:layout_height="36dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Price"
-                android:textSize="20dp"
-                android:textStyle="bold|italic" />
-
-            <TextView
-                android:id="@+id/PriceFillText"
-                android:layout_width="327dp"
-                android:layout_height="36dp"
-                android:textSize="20dp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/RoomAddressText"
-                android:layout_width="69dp"
-                android:layout_height="36dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Address"
-                android:textSize="20dp"
-                android:textStyle="bold|italic" />
-
-            <TextView
-                android:id="@+id/RoomAddressFillText"
-                android:layout_width="327dp"
-                android:layout_height="36dp"
-                android:textSize="20dp"
-                android:textStyle="italic" />
-            <TextView
-                android:id="@+id/CityText"
-                android:layout_width="69dp"
-                android:layout_height="36dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="City"
-                android:textSize="20dp"
-                android:textStyle="bold|italic" />
-
-            <TextView
-                android:id="@+id/CityFillText"
-                android:layout_width="327dp"
-                android:layout_height="36dp"
-                android:textSize="20dp"
-                android:textStyle="italic" />
 
             <LinearLayout
                 android:layout_width="325dp"
-                android:layout_height="53dp"
-                android:gravity="left"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/checkboxDetailac"
-                    android:layout_width="85dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="AC"
-                    android:textSize="15dp" />
+                <TextView
+                    android:id="@+id/DetailRoomName"
+                    android:layout_width="161dp"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:fontFamily="@font/satoshiblack"
+                    android:inputType="textPersonName"
+                    android:text="Name:"
+                    android:textSize="20dp"
+                    android:textStyle="bold|italic" />
 
-                <CheckBox
-                    android:id="@+id/checkboxDetailrefrigerator"
-                    android:layout_width="131dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Refrigerator"
-                    android:textSize="15dp" />
+                <TextView
+                    android:id="@+id/NameFillText"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:fontFamily="@font/satoshiblack"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
 
-                <CheckBox
-                    android:id="@+id/checkboxDetailwifi"
+                <TextView
+                    android:id="@+id/SizeText"
+                    android:layout_width="150dp"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:fontFamily="@font/satoshiblack"
+                    android:inputType="textPersonName"
+                    android:text="Size:"
+                    android:textSize="20dp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/SizeFillText"
+                    android:layout_width="327dp"
+                    android:layout_height="36dp"
+                    android:fontFamily="@font/satoshiblack"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/BedTypeText"
                     android:layout_width="99dp"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:fontFamily="@font/satoshiblack"
+                    android:inputType="textEmailAddress"
+                    android:text="Bed Type:"
+                    android:textSize="20dp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/BedTypeFillText"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:fontFamily="@font/satoshiblack"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/PriceText"
+                    android:layout_width="69dp"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:fontFamily="@font/satoshiblack"
+                    android:inputType="textPersonName"
+                    android:text="Price"
+                    android:textSize="20dp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/PriceFillText"
+                    android:layout_width="327dp"
+                    android:layout_height="36dp"
+                    android:fontFamily="@font/satoshiblack"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/RoomAddressText"
+                    android:layout_width="86dp"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:fontFamily="@font/satoshiblack"
+                    android:inputType="textPersonName"
+                    android:text="Address"
+                    android:textSize="20dp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/RoomAddressFillText"
+                    android:layout_width="327dp"
+                    android:layout_height="36dp"
+                    android:fontFamily="@font/satoshiblack"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/CityText"
+                    android:layout_width="69dp"
+                    android:layout_height="36dp"
+                    android:ems="10"
+                    android:fontFamily="@font/satoshiblack"
+                    android:inputType="textPersonName"
+                    android:text="City"
+                    android:textSize="20dp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/CityFillText"
+                    android:layout_width="327dp"
+                    android:layout_height="36dp"
+                    android:fontFamily="@font/satoshiblack"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
+
+                <LinearLayout
+                    android:layout_width="325dp"
+                    android:layout_height="53dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkboxDetailac"
+                        android:layout_width="89dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/satoshiblack"
+                        android:text="AC"
+                        android:textSize="15dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxDetailrefrigerator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/satoshiblack"
+                        android:text="Refrigerator"
+                        android:textSize="15dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxDetailwifi"
+                        android:layout_width="99dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/satoshiblack"
+                        android:text="WiFi"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="325dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="WiFi"
-                    android:textSize="15dp" />
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkboxDetailbathub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/satoshiblack"
+                        android:text="Bathtub"
+                        android:textSize="15dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxDetailbalcony"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/satoshiblack"
+                        android:text="Balcony"
+                        android:textSize="15dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxDetailrestaurant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/satoshiblack"
+                        android:text="Restaurant"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="325dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkboxDetailpool"
+                        android:layout_width="168dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/satoshiblack"
+                        android:text="Swimming Pool"
+                        android:textSize="15dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkboxDetailfitness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/satoshiblack"
+                        android:text="Fitness Center"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
 
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="325dp"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkboxDetailbathub"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Bathtub"
-                    android:textSize="15dp" />
-
-                <CheckBox
-                    android:id="@+id/checkboxDetailbalcony"
-                    android:layout_width="95dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Balcony"
-                    android:textSize="15dp" />
-
-                <CheckBox
-                    android:id="@+id/checkboxDetailrestaurant"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Restaurant"
-                    android:textSize="15dp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="325dp"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkboxDetailpool"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Swimming Pool"
-                    android:textSize="15dp" />
-
-                <CheckBox
-                    android:id="@+id/checkboxDetailfitness"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Fitness Center"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
 
     <Button
         android:id="@+id/BookButton"
@@ -249,10 +279,11 @@
         android:backgroundTint="#98ED89"
         android:text="Book"
         android:textColor="@color/black"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

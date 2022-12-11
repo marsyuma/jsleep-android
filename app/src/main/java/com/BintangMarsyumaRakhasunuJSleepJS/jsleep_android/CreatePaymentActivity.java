@@ -39,8 +39,6 @@ public class CreatePaymentActivity extends AppCompatActivity {
 
     EditText BookingFrom, BookingTo;
 
-    CardView CardViewConfirmCancel;
-    Button ConfirmButton, CancelButton;
 
     final String REGEX_DATE_PATTERN = "\\d{4}-\\d{2}-\\d{2}";
 
@@ -61,13 +59,7 @@ public class CreatePaymentActivity extends AppCompatActivity {
         BookingFrom = findViewById(R.id.FromFillText);
         BookingTo = findViewById(R.id.ToFillText);
 
-        //==============Confirm Cancel================
-        CardViewConfirmCancel = findViewById(R.id.CardViewConfirmCancel);
-        ConfirmButton = findViewById(R.id.ConfirmPaymentButton);
-        CancelButton = findViewById(R.id.CancelPaymentButton);
 
-        CardViewBook.setVisibility(CardView.VISIBLE);
-        CardViewConfirmCancel.setVisibility(CardView.GONE);
         BookingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,19 +69,6 @@ public class CreatePaymentActivity extends AppCompatActivity {
                         BookingFrom.getText().toString(),
                         BookingTo.getText().toString());
 
-            }
-        });
-
-        ConfirmButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                requestConfirmPayment(payment.id);
-            }
-        });
-        CancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                requestCancelPayment(payment.id);
             }
         });
 
@@ -114,9 +93,9 @@ public class CreatePaymentActivity extends AppCompatActivity {
                 public void onResponse(Call<Payment> call, Response<Payment> response) {
                     if (response.isSuccessful()) {
                         payment = response.body();
-                        CardViewBook.setVisibility(CardView.GONE);
-                        CardViewConfirmCancel.setVisibility(CardView.VISIBLE);
                         Toast.makeText(mContext, "Payment Created", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(mContext, MainActivity.class);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(mContext, "Payment Failed to Create", Toast.LENGTH_SHORT).show();
                     }
@@ -135,58 +114,6 @@ public class CreatePaymentActivity extends AppCompatActivity {
         return null;
     }
 
-    protected Boolean requestConfirmPayment(int paymentId) {
-        mApiService.acceptPayment(paymentId).enqueue(new Callback<Boolean>() {
-            @Override
-            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                if (response.isSuccessful()) {
-                    Boolean isConfirmed = response.body();
-                    if(isConfirmed) {
-                        Toast.makeText(mContext, "Payment Confirmed", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(mContext, MainActivity.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(mContext, "Payment Failed", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(mContext, "Payment Failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Boolean> call, Throwable t) {
-                Toast.makeText(mContext, "Payment Failed", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        return null;
-    }
-    protected Boolean requestCancelPayment(int paymentId) {
-        mApiService.cancelPayment(paymentId).enqueue(new Callback<Boolean>() {
-            @Override
-            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                if (response.isSuccessful()) {
-                    Boolean isConfirmed = response.body();
-                    if(isConfirmed) {
-                        Toast.makeText(mContext, "Payment Canceled", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(mContext, MainActivity.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(mContext, "Payment Failed", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(mContext, "Payment Failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Boolean> call, Throwable t) {
-                Toast.makeText(mContext, "Payment Failed", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        return null;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

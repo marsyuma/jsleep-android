@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RenterConfirmationActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="false"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="392dp"
+            android:layout_height="1300dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="21dp">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCreateRoom"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+
+                app:cardBackgroundColor="@color/backgroundGreen"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.488"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <LinearLayout
+                    android:layout_width="325dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="33dp"
+                    tools:layout_editor_absoluteY="120dp">
+
+                    <TextView
+                        android:id="@+id/renter"
+                        android:layout_width="240dp"
+                        android:layout_height="61dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/satoshiblack"
+                        android:gravity="center_vertical"
+                        android:text="Room Details"
+                        android:textColor="@color/black"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/roomNameCheckout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_marginRight="20dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="center"
+                                android:text="Name"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/roomBedTypeCheckout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_marginRight="20dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="center"
+                                android:text="Bed Type"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/roomSizeCheckout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_marginRight="20dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="center"
+                                android:text="Size"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/roomPriceCheckout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_marginRight="20dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="center"
+                                android:text="Price"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/roomAddressCheckout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_marginRight="20dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="center"
+                                android:text="Address"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="right"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:id="@+id/roomNameCheckoutVar"
+                                android:layout_width="190dp"
+                                android:layout_height="30dp"
+
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="right"
+
+                                android:text="Name"
+                                android:textColor="@color/black"
+                                android:textSize="20dp" />
+
+
+                            <TextView
+                                android:id="@+id/roomBedTypeCheckoutVar"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="100dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="right"
+
+                                android:text="Bed type"
+                                android:textColor="@color/black"
+                                android:textSize="20dp" />
+
+                            <TextView
+                                android:id="@+id/roomSizeCheckoutVar"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="100dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="right"
+
+                                android:text="Bed type"
+                                android:textColor="@color/black"
+                                android:textSize="20dp" />
+
+                            <TextView
+                                android:id="@+id/roomPriceCheckoutVar"
+                                android:layout_width="190dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="100dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="right"
+
+                                android:text="Price"
+                                android:textColor="@color/black"
+                                android:textSize="20dp" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/roomAddressCheckoutVar"
+                        android:layout_width="300dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="20dp"
+                        android:fontFamily="@font/satoshiblack"
+                        android:gravity="top|left"
+
+                        android:text="Address"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+
+
+                    <TextView
+                        android:id="@+id/facilityCheckout"
+                        android:layout_width="240dp"
+                        android:layout_height="61dp"
+                        android:layout_marginLeft="20dp"
+
+                        android:fontFamily="@font/satoshiblack"
+                        android:gravity="center_vertical"
+                        android:text="Facility"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="301dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="-12dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/acCheckout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="false"
+                            android:fontFamily="@font/satoshiblack"
+                            android:text="AC"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <CheckBox
+                            android:id="@+id/refrigeratorCheckout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="false"
+                            android:fontFamily="@font/satoshiblack"
+                            android:text="Refrigerator"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <CheckBox
+                            android:id="@+id/wifiCheckout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="false"
+                            android:fontFamily="@font/satoshiblack"
+                            android:text="WiFi"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="320dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/bathubCheckout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="false"
+                            android:fontFamily="@font/satoshiblack"
+                            android:text="Bathtub"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <CheckBox
+                            android:id="@+id/balconyCheckout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="false"
+                            android:fontFamily="@font/satoshiblack"
+                            android:text="Balcony"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <CheckBox
+                            android:id="@+id/restaurantCheckout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="false"
+                            android:fontFamily="@font/satoshiblack"
+                            android:text="Restaurant"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="301dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="left"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/poolCheckout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="false"
+                            android:fontFamily="@font/satoshiblack"
+                            android:text="Swimming Pool"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+
+                        <CheckBox
+                            android:id="@+id/fitnessCheckout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="false"
+                            android:fontFamily="@font/satoshiblack"
+                            android:text="Fitness Center"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="150dp"
+
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|left"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="center"
+                                android:text="From"
+                                android:textColor="@color/black"
+                                android:textSize="20dp" />
+
+                            <TextView
+                                android:id="@+id/fromDateCheckout"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|left"
+
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="center"
+                                android:text="from date"
+                                android:textColor="@color/black"
+                                android:textSize="20dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:orientation="vertical">
+                            >
+
+                            <TextView
+
+                                android:layout_width="150dp"
+
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|right"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="center"
+                                android:text="To"
+                                android:textColor="@color/black"
+                                android:textSize="20dp" />
+
+                            <TextView
+                                android:id="@+id/toDateCheckout"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|right"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/satoshiblack"
+                                android:gravity="center"
+                                android:text="to date"
+                                android:textColor="@color/black"
+                                android:textSize="20dp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+
+                            android:fontFamily="@font/satoshiblack"
+                            android:gravity="center_vertical"
+                            android:text="IDR"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/totalPrice"
+                            android:layout_width="210dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+
+
+                            android:layout_marginLeft="20dp"
+
+                            android:fontFamily="@font/satoshiblack"
+                            android:gravity="center_vertical|right"
+                            android:text="Room Details"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+
+                            android:fontFamily="@font/satoshiblack"
+                            android:gravity="center_vertical"
+                            android:text="Status"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/status"
+                            android:layout_width="210dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+
+                            android:layout_marginLeft="10dp"
+
+                            android:fontFamily="@font/satoshiblack"
+                            android:gravity="center_vertical|right"
+                            android:text="ENUM"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ratingView"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+
+                            android:fontFamily="@font/satoshiblack"
+                            android:gravity="center_vertical"
+                            android:text="Rating"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/rateText"
+                            android:layout_width="210dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+
+                            android:layout_marginLeft="10dp"
+
+                            android:fontFamily="@font/satoshiblack"
+                            android:gravity="center_vertical|right"
+                            android:text="ENUM"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/voucherInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/voucherCode"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/black"
+                    android:enabled="true"
+                    android:fontFamily="@font/satoshiblack"
+                    android:hint="Enter code"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+
+                <Button
+                    android:id="@+id/applyVoucher"
+                    android:layout_width="130dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/button_rounded"
+                    android:enabled="true"
+                    android:fontFamily="@font/satoshiblack"
+                    android:text="Check code"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvRating"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/backgroundGreen"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.488"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/satoshiblack"
+                        android:gravity="center"
+                        android:text="How was your night?"
+                        android:textColor="@color/black"
+                        android:textSize="35dp" />
+
+                    <Spinner
+                        android:id="@+id/spRating"
+                        android:layout_width="200dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp" />
+
+                    <Button
+                        android:id="@+id/rateButton"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/button_rounded"
+                        android:fontFamily="@font/satoshiblack"
+                        android:text="Rate"
+                        android:textColor="@color/black">
+
+                    </Button>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:id="@+id/cancelAccept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/cancelCheckout"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_rounded"
+                    android:enabled="true"
+                    android:fontFamily="@font/satoshiblack"
+                    android:text="cancel"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/checkout"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/button_rounded"
+                    android:enabled="true"
+                    android:fontFamily="@font/satoshiblack"
+                    android:text="checkout"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

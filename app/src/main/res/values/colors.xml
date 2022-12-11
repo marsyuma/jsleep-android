@@ -10,4 +10,6 @@
     <color name="colorPrimary">#acdda3</color>
     <color name="colorPrimaryVariant">#bce3b5</color>
     <color name="deepBlue">#00008B</color>
+    <color name="backgroundGreen">#cdeac7</color>
+    <color name="ButtonColor">#98ED89</color>
 </resources>

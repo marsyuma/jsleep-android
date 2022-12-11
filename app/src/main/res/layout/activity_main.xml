@@ -14,6 +14,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023">
 
@@ -21,9 +22,9 @@
             android:id="@+id/PrevButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#98ED89"
-            android:insetLeft="10dp"
-            android:insetRight="10dp"
+            android:background="@drawable/button_rounded"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
             android:text="PREV"
             android:textColor="@color/black" />
 
@@ -31,9 +32,9 @@
             android:id="@+id/NextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#98ED89"
-            android:insetLeft="10dp"
-            android:insetRight="10dp"
+            android:background="@drawable/button_rounded"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
             android:text="NEXT"
             android:textColor="@color/black" />
 
@@ -42,17 +43,17 @@
             android:layout_width="70dp"
             android:layout_height="50dp"
             android:ems="10"
-            android:text="1"
             android:inputType="number"
+            android:text="1"
             android:textAlignment="center" />
 
         <Button
             android:id="@+id/GoButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#98ED89"
-            android:insetLeft="10dp"
-            android:insetRight="10dp"
+            android:background="@drawable/button_rounded"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
             android:text="GO"
             android:textColor="@color/black" />
     </LinearLayout>
@@ -69,17 +70,29 @@
         app:layout_constraintVertical_bias="0.212" />
 
     <ImageView
-        android:id="@+id/SunMain"
-        android:layout_width="411dp"
-        android:layout_height="259dp"
-        android:layout_marginTop="504dp"
-        android:alpha="0.4"
+        android:layout_width="600dp"
+        android:layout_height="502dp"
 
-        android:rotation="0"
+        android:alpha="0.2"
+        android:rotation="200"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:srcCompat="@drawable/sun" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.7"
+        app:srcCompat="@drawable/bottom_leaf" />
 
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_rounded"
+        android:text="Logout"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 </androidx.constraintlayout.widget.ConstraintLayout>

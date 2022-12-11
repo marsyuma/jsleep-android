@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 
@@ -79,5 +82,28 @@ public class DetailRoomActivity extends AppCompatActivity {
 
 
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    /**
+     This method is called when a menu item is selected.
+     @param item the selected menu item
+     @return true if the menu item was handled successfully, false otherwise
+     */
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.home:
+                Intent move = new Intent(DetailRoomActivity.this, MainActivity.class);
+                startActivity(move);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
