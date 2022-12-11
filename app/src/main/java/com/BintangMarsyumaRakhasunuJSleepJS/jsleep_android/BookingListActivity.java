@@ -60,9 +60,9 @@ public class BookingListActivity extends AppCompatActivity {
 
         mContext=this;
         lv = findViewById(R.id.listViewOrder);
-        next = findViewById(id.NextPaymentButton);
-        prev = findViewById(id.PrevPaymentButton);
-        back = findViewById(id.backButton);
+        next = findViewById(R.id.NextPaymentButton);
+        prev = findViewById(R.id.PrevPaymentButton);
+        back = findViewById(R.id.backButton);
         lv.setOnItemClickListener(this::onItemClick);
         System.out.println("gap sblm acc");
         currentPage = 0;
