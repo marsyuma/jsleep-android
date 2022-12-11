@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem menu) {
         Intent aboutMeIntent = new Intent(MainActivity.this,AboutMeActivity.class);
         Intent CreateRoomIntent = new Intent(MainActivity.this,CreateRoomActivity.class);
+        Intent SearchRoomIntent = new Intent(MainActivity.this,SearchRoomActivity.class);
         switch (menu.getItemId()){
             case R.id.AccountIcon:
                 Toast.makeText(this, "About me", Toast.LENGTH_SHORT).show();
@@ -131,6 +132,10 @@ public class MainActivity extends AppCompatActivity {
             case id.AddIcon:
                 Toast.makeText(this, "Create Room", Toast.LENGTH_SHORT).show();
                 startActivity(CreateRoomIntent);
+                return true;
+            case id.SearchIcon:
+                Toast.makeText(this, "Search Room", Toast.LENGTH_SHORT).show();
+                startActivity(SearchRoomIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(menu);

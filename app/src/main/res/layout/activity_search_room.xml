@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    tools:context=".SearchRoomActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Search Room"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerfilter"
+        android:layout_width="148dp"
+        android:layout_height="38dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/search_edittext"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:hint="Name/Price/Min"
+        app:layout_constraintStart_toEndOf="@+id/spinnerfilter"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/search_edittext2"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="148dp"
+        android:hint="Max"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_edittext" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/search_button_inside"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_rounded"
+        android:text="Search"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/search_edittext"
+        tools:layout_editor_absoluteX="40dp" />
+
+    <ListView
+        android:id="@+id/search_listview"
+        android:layout_width="match_parent"
+        android:layout_height="390dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/search_button_inside"
+        tools:layout_editor_absoluteX="40dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_rounded"
+        android:text="BACK"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/search_listview"
+        tools:layout_editor_absoluteX="40dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

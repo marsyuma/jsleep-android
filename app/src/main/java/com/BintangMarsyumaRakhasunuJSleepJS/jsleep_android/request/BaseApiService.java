@@ -59,5 +59,14 @@ public interface BaseApiService {
     @POST("payment/{id}/rating")
     Call<Boolean> rating(@Path("id") int id, @Query("rating") String rating);
 
+    @GET("room/collectByName")
+    Call<List<Room>> collectByName(@Query("name") String name);
+
+    @GET("room/collectByCity")
+    Call<List<Room>> collectByCity(@Query("city") String city);
+
+    @GET("room/collectByPrice")
+    Call<List<Room>> collectByPrice(@Query("min") int min, @Query("max") int max);
+
 }
 
